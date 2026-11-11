@@ -1,0 +1,159 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f4f7f7;
+}
+
+header{
+    background:#0D4D4D;
+    padding:20px;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+nav h1{
+    color:white;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+
+.hero h2{
+    color:#0D4D4D;
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:800px;
+    margin:auto;
+    font-size:1.2rem;
+    color:#555;
+}
+
+button{
+    margin-top:30px;
+    padding:15px 35px;
+    border:none;
+    border-radius:10px;
+    background:#F9B233;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#e09d2b;
+}
+
+.botones{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.secundario{
+    background:white;
+    color:#0D4D4D;
+}
+
+.estadisticas{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    padding:60px 20px;
+    background:white;
+}
+
+.estadistica{
+    background:#f5f5f5;
+    padding:30px;
+    border-radius:15px;
+    width:220px;
+    text-align:center;
+    box-shadow:0px 4px 12px rgba(0,0,0,0.1);
+}
+
+.estadistica h3{
+    color:#0D4D4D;
+    font-size:2.5rem;
+    margin-bottom:10px;
+}
+
+.estadistica p{
+    color:#555;
+    font-weight:600;
+}
+
+.hero-imagen img{
+    width:100%;
+    max-width:700px;
+    height:auto;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.hero{
+    min-height:85vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:60px 8%;
+    background:#246a6a;
+    gap:60px;
+}
+
+.hero-text h2{
+    color:white;
+    font-size:4rem;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    font-size:1.3rem;
+    color:#e8e8e8;
+    margin-bottom:30px;
+}
+
+@media (max-width: 900px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero-text{
+        order:2;
+    }
+
+    .hero-imagen{
+        order:1;
+    }
+
+    .hero-text h2{
+        font-size:3rem;
+    }
+
+}
