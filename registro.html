@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registro | EmpleoJoven 360</title>
+
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav>
+
+        <h1>EmpleoJoven 360</h1>
+
+        <ul>
+
+    <li><a href="index.html">Inicio</a></li>
+
+</ul>
+
+    </nav>
+
+</header>
+
+<section class="registro">
+
+    <div class="registro-contenedor">
+
+        <h2>Crear Perfil Profesional</h2>
+
+        <p>
+            Completa la información para postularte a las vacantes
+            disponibles en EmpleoJoven 360.
+        </p>
+
+        <form id="formRegistro">
+
+            <input type="text"
+            id="nombre"
+                   placeholder="Nombre Completo"
+                   required>
+
+            <input type="email"
+            id="correo"
+                   placeholder="Correo Electrónico"
+                   required>
+
+            <input type="tel"
+            id="telefono"
+                   placeholder="Número de Teléfono"
+                   required>
+
+            <input type="text"
+            id="ciudad"
+                   placeholder="Ciudad"
+                   required>
+
+            <input type="text"
+            id="nivel"
+                   placeholder="Nivel Académico"
+                   required>
+
+            <input type="text"
+            id="profesion"
+                   placeholder="Profesión u Oficio">
+
+            <label>Foto de Perfil</label>
+
+            <input type="file"
+            id="foto"
+            accept="image/*">       
+
+            <textarea
+            id="experiencia"
+                placeholder="Describe tus habilidades, experiencia, cursos o conocimientos">
+            </textarea>
+
+            <button type="submit">
+                Crear Perfil
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<script>
+
+document.getElementById("formRegistro")
+.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const archivo =
+    document.getElementById("foto").files[0];
+
+    const lector = new FileReader();
+
+    if(archivo){
+
+        lector.readAsDataURL(archivo);
+
+        lector.onload = function(){
+
+            const usuario = {
+
+                nombre:
+                document.getElementById("nombre").value,
+
+                correo:
+                document.getElementById("correo").value,
+
+                telefono:
+                document.getElementById("telefono").value,
+
+                ciudad:
+                document.getElementById("ciudad").value,
+
+                nivel:
+                document.getElementById("nivel").value,
+
+                profesion:
+                document.getElementById("profesion").value,
+
+                experiencia:
+                document.getElementById("experiencia").value,
+
+                foto:
+                lector.result
+
+            };
+
+            localStorage.setItem(
+                "usuarioEmpleoJoven",
+                JSON.stringify(usuario)
+            );
+
+            window.location.href =
+            "perfil.html";
+
+        };
+
+    }
+
+    else{
+
+        const usuario = {
+
+            nombre:
+            document.getElementById("nombre").value,
+
+            correo:
+            document.getElementById("correo").value,
+
+            telefono:
+            document.getElementById("telefono").value,
+
+            ciudad:
+            document.getElementById("ciudad").value,
+
+            nivel:
+            document.getElementById("nivel").value,
+
+            profesion:
+            document.getElementById("profesion").value,
+
+            experiencia:
+            document.getElementById("experiencia").value,
+
+            foto:""
+
+        };
+
+        localStorage.setItem(
+            "usuarioEmpleoJoven",
+            JSON.stringify(usuario)
+        );
+
+        window.location.href =
+        "perfil.html";
+
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>

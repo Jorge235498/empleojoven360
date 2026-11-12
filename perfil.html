@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi Perfil | EmpleoJoven 360</title>
+
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav>
+
+        <h1>EmpleoJoven 360</h1>
+
+        <ul>
+
+            <li>
+                <a href="index.html">Inicio</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<section class="perfil">
+
+    <div class="perfil-card">
+
+        <div class="avatar">
+
+<img id="fotoPerfil">
+
+</div>
+
+        <h2 id="nombre"></h2>
+
+        <div class="info">
+
+            <p><strong>Correo:</strong> <span id="correo"></span></p>
+
+            <p><strong>Teléfono:</strong> <span id="telefono"></span></p>
+
+            <p><strong>Ciudad:</strong> <span id="ciudad"></span></p>
+
+            <p><strong>Nivel Académico:</strong> <span id="nivel"></span></p>
+
+            <p><strong>Profesión:</strong> <span id="profesion"></span></p>
+
+            <p><strong>Experiencia:</strong></p>
+
+            <p id="experiencia"></p>
+
+        </div>
+
+        <div class="acciones-perfil">
+
+    <button onclick="window.location.href='registro.html'">
+        ✏️ Editar Perfil
+    </button>
+
+</div>
+
+    </div>
+
+</section>
+
+<script>
+
+const usuario =
+JSON.parse(localStorage.getItem("usuarioEmpleoJoven"));
+
+if(usuario.foto){
+
+document.getElementById("fotoPerfil")
+.src = usuario.foto;
+
+document.getElementById("nombre").textContent =
+usuario.nombre;
+
+document.getElementById("correo").textContent =
+usuario.correo;
+
+document.getElementById("telefono").textContent =
+usuario.telefono;
+
+document.getElementById("ciudad").textContent =
+usuario.ciudad;
+
+document.getElementById("nivel").textContent =
+usuario.nivel;
+
+document.getElementById("profesion").textContent =
+usuario.profesion;
+
+document.getElementById("experiencia").textContent =
+usuario.experiencia;
+
+}
+
+</script>
+
+<p class="estado">
+    ✅ Disponible para trabajar
+</p>
+
+</body>
+
+</html>

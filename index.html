@@ -16,11 +16,15 @@
             <h1>EmpleoJoven 360</h1>
 
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Vacantes</a></li>
-                <li><a href="#">Cursos</a></li>
-                <li><a href="#">Empresas</a></li>
-                <li><a href="#">Contacto</a></li>
+                
+                 <li>
+<a href="#"
+onclick="ingresar()">
+Ingresar
+</a>
+</li>
+
+
             </ul>
         </nav>
     </header>
@@ -37,8 +41,13 @@
         </p>
 
         <div class="botones">
-            <button>Buscar Empleo</button>
-            <button class="secundario">Registrarme</button>
+            <button onclick="window.location.href='vacantes.html'">
+    Buscar Empleo
+</button>
+            <button class="secundario"
+onclick="window.location.href='registro.html'">
+    Registrarme
+</button>
         </div>
 
     </div>
@@ -74,6 +83,109 @@
     </div>
 
 </section>
+
+<script>
+
+function miPerfil(){
+
+const usuario =
+JSON.parse(
+localStorage.getItem(
+"usuarioEmpleoJoven"
+));
+
+if(usuario){
+
+window.location.href =
+"perfil.html";
+
+}
+
+else{
+
+alert(
+"No existe ningún perfil registrado."
+);
+
+window.location.href =
+"registro.html";
+
+}
+
+}
+
+function ingresar(){
+
+let correoIngresado =
+prompt(
+"Ingrese su correo electrónico"
+);
+
+let usuario =
+JSON.parse(
+localStorage.getItem(
+"usuarioEmpleoJoven"
+));
+
+if(!usuario){
+
+alert(
+"Usuario no registrado."
+);
+
+window.location.href =
+"registro.html";
+
+return;
+
+}
+
+if(
+correoIngresado.trim().toLowerCase() ===
+usuario.correo.trim().toLowerCase()
+){
+
+localStorage.setItem(
+"logueado",
+"true"
+);
+
+alert(
+"Bienvenido " +
+usuario.nombre
+);
+
+window.location.href =
+"home.html";
+
+}
+
+else{
+
+alert(
+"Correo incorrecto."
+);
+
+}
+
+}
+
+</script>
+
+<script>
+
+const logueado =
+localStorage.getItem("logueado");
+
+if(logueado === "true"){
+
+    window.location.href =
+    "home.html";
+
+}
+
+</script>
+
 
 </body>
 

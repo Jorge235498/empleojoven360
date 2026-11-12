@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Inicio | EmpleoJoven 360</title>
+
+    <link rel="stylesheet"
+        href="estilos.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav>
+
+            <h1>EmpleoJoven 360</h1>
+
+            <div class="hamburguesa"
+                onclick="toggleMenu()">
+
+                ☰
+
+            </div>
+
+            <ul id="menu">
+
+                <li>
+                    <a href="home.html">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="vacantes.html">Vacantes</a>
+                </li>
+
+                <li>
+                    <a href="perfil.html">Mi Perfil</a>
+                </li>
+
+                <li>
+                    <a href="#"
+                        onclick="cerrarSesion()">
+                        Cerrar Sesión
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- BIENVENIDA -->
+
+    <section class="home-bienvenida">
+
+        <div class="home-texto">
+
+            <h2>
+                ¡Bienvenido a EmpleoJoven 360!
+            </h2>
+
+            <p>
+
+                En EmpleoJoven 360 creemos que cada joven tiene el potencial de construir un futuro exitoso.
+
+                Nuestra plataforma conecta el talento con oportunidades laborales reales, capacitaciones de calidad y empresas comprometidas con el empleo digno.
+
+                Explora vacantes, desarrolla nuevas competencias y crea un perfil profesional que te permita destacarte en el mercado laboral.
+
+                Tu próxima oportunidad está más cerca de lo que imaginas.
+
+            </p>
+
+            <button
+                onclick="window.location.href='vacantes.html'">
+
+                Explorar Vacantes
+
+            </button>
+
+        </div>
+
+        <div class="home-imagen">
+
+            <img src="img/empleojoven4.png"
+                alt="EmpleoJoven 360">
+
+        </div>
+
+    </section>
+
+    <!-- CURSOS -->
+
+    <section class="cursos">
+
+        <h2>📚 Cursos Recomendados</h2>
+
+        <div class="contenedor-cursos">
+
+            <div class="curso-card">
+
+                <h3>📊 Power BI</h3>
+
+                <p>
+                    Aprende análisis de datos y creación de dashboards interactivos.
+                </p>
+
+                <button>
+                    Ver Curso
+                </button>
+
+            </div>
+
+            <div class="curso-card">
+
+                <h3>🐍 Python</h3>
+
+                <p>
+                    Desarrolla habilidades en programación y automatización.
+                </p>
+
+                <button>
+                    Ver Curso
+                </button>
+
+            </div>
+
+            <div class="curso-card">
+
+                <h3>🌐 Desarrollo Web</h3>
+
+                <p>
+                    Aprende HTML, CSS y JavaScript para crear aplicaciones modernas.
+                </p>
+
+                <button>
+                    Ver Curso
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- EMPRESAS -->
+
+    <section class="empresas">
+
+        <h2>🏢 Empresas Aliadas</h2>
+
+        <div class="contenedor-empresas">
+
+            <div class="empresa-card">
+                🏢 Microsoft
+            </div>
+
+            <div class="empresa-card">
+                🏢 Google
+            </div>
+
+            <div class="empresa-card">
+                🏢 Bancolombia
+            </div>
+
+            <div class="empresa-card">
+                🏢 SENA
+            </div>
+
+            <div class="empresa-card">
+                🏢 Cámara de Comercio
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+
+        function cerrarSesion() {
+
+            localStorage.removeItem("logueado");
+
+            alert(
+                "Sesión cerrada correctamente."
+            );
+
+            window.location.href =
+                "index.html";
+
+        }
+
+        function toggleMenu() {
+
+            document
+                .getElementById("menu")
+                .classList.toggle("activo");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
