@@ -481,7 +481,7 @@ color:white;
 
 .cursos{
 
-    padding:80px 10%;
+    padding:10px 10% 30px 10%;
 
     text-align:center;
 }
@@ -508,7 +508,7 @@ color:white;
 
     background:white;
 
-    width:320px;
+    width:280px;
 
     padding:30px;
 
@@ -524,7 +524,7 @@ color:white;
 
 .empresas{
 
-    padding:80px 10%;
+    padding:10px 10% 40px 10%;
 
     text-align:center;
 
@@ -555,11 +555,11 @@ color:white;
 
     color:white;
 
-    padding:25px;
+    padding:20px;
+
+    width:180px;
 
     border-radius:15px;
-
-    width:220px;
 
     font-weight:bold;
 }
